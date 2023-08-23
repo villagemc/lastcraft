@@ -1,0 +1,43 @@
+@mixin sizeScrollButton($size1, $size2) {
+  right: $size1;
+  bottom: $size1;
+  width: $size2;
+  height: $size2;
+}
+
+.scroll-button {
+  @include sizeScrollButton(50px, 50px);
+
+  position: fixed;
+  border-radius: 50%;
+  border: 2px dashed $theme-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    filter: brightness($theme-product-brightness);
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: $global-screen-tablet) {
+    @include sizeScrollButton(30px, 45px)
+  }
+
+  @media screen and (max-width: $global-screen-android) {
+    @include sizeScrollButton(20px, 40px)
+  }
+
+  &__icon {
+    color: $theme-color;
+    font-size: 36px;
+    flex-shrink: 0;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      font-size: 30px;
+    }
+  }
+}

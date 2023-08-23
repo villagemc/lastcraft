@@ -1,0 +1,15 @@
+$global-font-family: 'Montserrat Alternates', 'Arial', sans-serif;
+$global-color: #ffbb00;
+$global-white: #FFF;
+$global-error: #ff3d3d;
+$global-radius: 8px;
+
+$global-screen-mega: 1360px;
+$global-screen-desktop: 1279px;
+$global-screen-tablet: 768px;
+$global-screen-android: 520px;
+
+@mixin active-link($color, $background) {
+  color: $color;
+  background: $background;
+}

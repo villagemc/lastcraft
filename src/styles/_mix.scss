@@ -1,0 +1,36 @@
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input, button, ul {
+  margin: 0;
+  padding: 0;
+}
+
+input, button {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}

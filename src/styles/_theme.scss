@@ -1,0 +1,31 @@
+[data-theme=light] {
+  $theme-background: #F9F8F9;
+  $theme-block: #FFF;
+  $theme-color: #727272;
+  $theme-table: #FFFFFF;
+  $theme-border: #DDE2E8;
+  $theme-product-brightness: .8;
+  $theme-bans-table: #f7f7f7;
+  $theme-bans-name: #000000;
+
+  $theme-bth-color-light: $global-color;
+  $theme-bth-color-dark: $theme-color;
+
+  @import './index';
+}
+
+[data-theme=dark] {
+  $theme-background: #181618;
+  $theme-block: #1F1E1F;
+  $theme-color: #B5B5B5;
+  $theme-table: #282729;
+  $theme-border: transparent;
+  $theme-product-brightness: 1.2;
+  $theme-bans-table: #1e1d1e;
+  $theme-bans-name: #FFFFFF;
+
+  $theme-bth-color-light: $theme-color;
+  $theme-bth-color-dark: $global-color;
+
+  @import './index';
+}

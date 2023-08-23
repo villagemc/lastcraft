@@ -1,0 +1,192 @@
+.bans {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 40px;
+
+  &__items {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr;
+
+    @media screen and (max-width: $global-screen-desktop) {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    @media screen and (max-width: $global-screen-tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));
+    }
+
+    @media screen and (max-width: $global-screen-android) {
+      grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    }
+  }
+
+  &__item {
+    background: $theme-bans-table;
+    border-radius: $global-radius;
+    border: 1px solid $theme-border;
+    display: grid;
+    gap: 12px 30px;
+    align-items: center;
+    grid-template-rows: 55px;
+    grid-template-columns:
+      minmax(170px, 1fr)
+      minmax(170px, 1fr)
+      minmax(160px, 1fr)
+      minmax(260px, 1fr)
+      minmax(180px, 1fr)
+    ;
+
+    @media screen and (max-width: $global-screen-mega) {
+      grid-template-columns:
+        minmax(160px, 1fr)
+        minmax(160px, 1fr)
+        minmax(160px, 1fr)
+        minmax(230px, 1fr)
+        minmax(160px, 1fr)
+      ;
+    }
+
+    @media screen and (max-width: $global-screen-desktop) {
+      padding: 15px;
+      grid-template-columns: 1fr;
+      grid-template-rows: unset;
+    }
+
+    &_head {
+      background: $theme-table;
+
+      @media screen and (max-width: $global-screen-desktop) {
+        display: none;
+      }
+    }
+
+    &_main {
+      transition: all .1s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.035);
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: $global-screen-android) {
+      gap: 12px;
+    } 
+
+    &:first-child {
+      padding: 0 0 0 30px;
+
+      @media screen and (max-width: $global-screen-desktop) {
+        padding: 0;
+      }
+    }
+
+    &:last-child {
+      padding: 0 30px 0 0;
+
+      @media screen and (max-width: $global-screen-desktop) {
+        padding: 0;
+      } 
+    }
+
+    @media screen and (max-width: $global-screen-desktop) {
+      &:nth-child(4) {
+        order: 999;
+      }
+    } 
+  }
+
+  &__name {
+    color: $theme-color;
+    font-size: 15px;
+    font-weight: 600;
+    word-break: break-all;
+
+    @media screen and (max-width: $global-screen-mega) {
+      font-size: 13px;
+    }
+
+    @media screen and (max-width: $global-screen-desktop) {
+      max-width: 355px;
+    }
+
+    &_head {
+      font-size: 17px;
+      font-weight: 700;
+
+      @media screen and (max-width: $global-screen-mega) {
+        font-size: 15px;
+      }
+
+      &:first-child {
+        padding: 0 0 0 30px;
+      }
+  
+      &:last-child {
+        padding: 0 30px 0 0;
+      }
+    }
+
+    &_table {
+      display: none;
+      color: $theme-bans-name;
+      white-space: nowrap;
+
+      @media screen and (max-width: $global-screen-desktop) {
+        display: inline;
+      }
+    }
+
+  }
+
+  &__counts {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__button {
+    display: flex;
+    flex-shrink: 0;
+    color: $theme-color;
+    font-size: 18px;
+    font-weight: 700;
+    background: $theme-block;
+    padding: 10px 15px;
+    border: 2px solid $theme-border;
+    border-radius: $global-radius;
+    transition: all .3s ease;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness($theme-product-brightness);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &:hover {
+        filter: brightness(1);
+      }
+    }
+  }
+
+  &__count {
+    flex-shrink: 0;
+    color: $theme-color;
+    font-size: 16px;
+    font-weight: 700;
+    background: $theme-block;
+    padding: 10px;
+    border: 2px solid $theme-border;
+    border-radius: $global-radius;
+  }
+}

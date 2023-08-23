@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  align-self: flex-start;
+  box-sizing: border-box;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media screen and (max-width: $global-screen-android) {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: $global-color;
+    white-space: nowrap;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__search {
+    background: $theme-table;
+    width: 100%;
+    min-width: 250px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: 1px solid $theme-border;
+    color: $theme-color;
+    font-size: 15px;
+    font-weight: 500;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      font-size: 13px;
+    }
+
+    @media screen and (max-width: $global-screen-android) {
+      order: 2;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    font-size: 28px;
+    flex-shrink: 0;
+    color: $global-color;
+    transition: all .3s ease;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

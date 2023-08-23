@@ -1,0 +1,148 @@
+@keyframes card-product {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+
+    @media screen and (max-width: $global-screen-android) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+  }
+
+  &__category {
+    padding: 10px 15px;
+    color: $theme-color;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    background: $theme-table;
+    border: 1px solid $theme-border;
+    border-radius: $global-radius;
+    cursor: pointer;
+    transition: all .1s linear;
+
+    &:hover, &_active {
+      color: $global-white;
+      background: $global-color;
+      border: 1px solid transparent;
+      box-shadow: 0 0 4px .5px $global-color;
+    }
+  }
+
+  &__desc {
+    padding: 12px 15px;
+    background: $theme-table;
+    border: 1px solid $theme-border;
+    border-radius: $global-radius;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    color: $theme-color;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    max-width: 800px;
+    color: $theme-color;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+  }
+
+  &__product {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: $global-radius;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &_active {
+      animation: card-product 1s ease;
+    }
+
+    &:hover {
+      filter: brightness($theme-product-brightness);
+
+      .shop__image {
+        transform: scale(1.2);
+      }
+
+      .shop__price {
+        filter: invert(1.2);
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__images {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    transition: all .3s ease;
+  }
+
+  &__name {
+    color: $theme-color;
+    font-size: 24px;
+    font-weight: 600;
+    word-wrap: break-word;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    color: $theme-color;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__price {
+    cursor: pointer;
+    padding: 5px;
+    margin: 10px 0 0;
+    color: $theme-color;
+    background: $theme-table;
+    text-align: center;
+    border: 1px solid $theme-color;
+    border-radius: $global-radius;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .3s ease;
+  }
+}

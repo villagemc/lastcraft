@@ -1,0 +1,173 @@
+.dash {
+  $dash-width: 218px;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $theme-block;
+  margin-left: calc($dash-width * -1);
+  min-width: $dash-width;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity .3s ease, visiblity .3s ease, margin-left .3s ease;
+
+  @media screen and (max-width: $global-screen-tablet) {
+    position: fixed;
+    width: 100%;
+    margin-left: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s ease, visiblity .3s ease;
+  }
+
+  &_active {
+    margin-left: 0;
+    visibility: visible;
+    opacity: 1;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__logos {
+    padding: 50px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      padding: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__site {
+    display: block;
+    width: 55px;
+
+    &:hover {
+      opacity: .9;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      filter: brightness(1.2);
+    }
+
+    @media screen and (max-width: $global-screen-android) {
+      width: 45px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+  }
+
+  &__ip {
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    color: $theme-color;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &::after {
+      content: attr(data-copy);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      transform: translateX(-25%);
+      font-size: 13px;
+      font-weight: 400;
+
+      @media screen and (max-width: $global-screen-tablet) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__links {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .active {
+      @include active-link(
+        $global-white,
+        $global-color
+      )
+    }
+  }
+
+  &__link {
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $theme-color;
+
+    &:hover {
+      @include active-link(
+        $global-white,
+        $global-color
+      )
+    }
+  }
+
+  &__icon {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  &__themes {
+    margin: auto auto 50px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media screen and (max-width: $global-screen-tablet) {
+      margin: auto 20px 50px;
+    }
+  }
+
+  &__theme {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &_light {
+      color: $theme-bth-color-light;
+      border: 1px solid $theme-bth-color-light;
+    }
+
+    &_dark {
+      color: $theme-bth-color-dark;
+      border: 1px solid $theme-bth-color-dark;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.content {
+  width: 100%;
+  padding: 23px 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media screen and (max-width: $global-screen-tablet) {
+    padding: 16px 20px 40px;
+  }
+
+  @media screen and (max-width: $global-screen-android) {
+    padding: 16px 16px 40px;
+  }
+
+  &__wait {
+    padding: 10px 15px;
+    border: 1px solid $theme-border;
+    background: $theme-table;
+    text-align: center;
+    color: $theme-color;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
