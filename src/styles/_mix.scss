@@ -2,6 +2,12 @@ body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+.title {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
 input, button, ul {
   margin: 0;
   padding: 0;
